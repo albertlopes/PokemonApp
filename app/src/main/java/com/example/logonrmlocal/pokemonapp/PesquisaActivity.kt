@@ -12,6 +12,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.facebook.stetho.okhttp3.StethoInterceptor
+import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient
 
 
@@ -26,6 +27,10 @@ class PesquisaActivity : AppCompatActivity() {
             val okHttp = OkHttpClient.Builder()
                     .addNetworkInterceptor(StethoInterceptor())
                     .build()
+
+            Picasso.get()
+                    .load(R.drawable.whois)
+                    .into(ivPokemon)
 
             val retrofit = Retrofit.Builder()
                     .baseUrl("http://pokeapi.co")
@@ -46,10 +51,20 @@ class PesquisaActivity : AppCompatActivity() {
 
                                 val pokemon = response.body()
                                 tvPokemon.text = pokemon?.name
+                                Picasso.get()
+                                        .load(pokemon!!.sprites.frontDefault)
+                                        .placeholder(R.drawable.whois)
+                                        .error(R.drawable.pekachu)
+                                        .into(ivPokemon)
 
                             } else {
 
                                 Toast.makeText(this@PesquisaActivity, "Deu merda", Toast.LENGTH_LONG).show()
+                                tvPokemon.text = "P 1 k a c h 0 0 0"
+                                Picasso.get()
+                                        .load(R.drawable.pekachu)
+                                        .placeholder(R.drawable.whois)
+                                        .into(ivPokemon)
 
                             }
 

@@ -8,46 +8,43 @@
 
     <Button
         android:id="@+id/btPesquisar"
-        android:layout_width="0dp"
+        android:layout_width="106dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Pesquisar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPesquisar" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etPesquisar"
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/etPesquisar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btPesquisar"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivPokemon"
-        android:layout_width="193dp"
-        android:layout_height="229dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="274dp"
+        android:layout_height="213dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btPesquisar"
+        app:layout_constraintTop_toBottomOf="@+id/tvPokemon"
         app:srcCompat="@drawable/pikaaaa" />
 
     <TextView
@@ -61,7 +58,8 @@
         android:layout_marginTop="8dp"
         android:text="AndroidChu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPokemon" />
+        app:layout_constraintTop_toBottomOf="@+id/etPesquisar" />
 
 </android.support.constraint.ConstraintLayout>
